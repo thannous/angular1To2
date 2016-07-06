@@ -3,18 +3,20 @@ angular.module('Brewery.directive', []).directive('beerItem', ['BreweryService',
 		restrict: 'E',
 		scope: {
 			beer: '='
-		}, 
+		},
+		controllerAs: 'bi',
+		bindToController: true,
 		template: '<div class="col-md-4 panel panel-default">' +
 				'<div class="panel-heading">' +
-					'<span ng-class="beer.note | NoteFilter"></span>{{beer.name}}</div>' +
+					'<span ng-class="bi.beer.note | NoteFilter"></span>{{bi.beer.name}}</div>' +
 					'<div class="panel-body">' +
-						'{{beer.description}}' +
+						'{{bi.beer.description}}' +
 					'</div>' +
-					'<button ng-click="selectBeer()" class="btn btn-primary">Give me a pinte !</button>' +
+					'<button ng-click="bi.selectBeer()" class="btn btn-primary">Give me a pinte !</button>' +
 				'</div>',
-		controller: ['$scope', function($scope){
-			$scope.selectBeer = function(){
-				BreweryService.getOnePinte($scope.beer);
+		controller: ['$scope', function(){
+			this.selectBeer = function(){
+				BreweryService.getOnePinte(this.beer);
 			};
 		}]
 	};

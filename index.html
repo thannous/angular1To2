@@ -25,8 +25,8 @@
 </head>
 <body ng-app="Brewery">
 <header><h1>Stime Breuverie !!</h1></header>
-<main ng-controller="BreweryCtrl">
-    <beer-item ng-repeat="b in beers" beer="b" ></beer-item>
+<main ng-controller="BreweryCtrl as bc">
+    <beer-item ng-repeat="b in bc.beers" beer="b" ></beer-item>
 </main>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
