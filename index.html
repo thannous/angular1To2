@@ -23,15 +23,31 @@
         }
     </style>
 </head>
-<body ng-app="Brewery">
-<header><h1>Zenika Brewery !!</h1></header>
-<app></app>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+<body>
 
-<script type="text/javascript" src="components/brewery.service.js"></script>
-<script type="text/javascript" src="components/beerItem.directive.js"></script>
-<script type="text/javascript" src="components/note.filter.js"></script>
+<header><h1>Stime Brewery !!</h1></header>
 
-<script type="text/javascript" src="app.js"></script>
+    <app></app>
+
+    <!-- 1. Load libraries -->
+    <!-- IE required polyfill -->
+    <script src="node_modules/core-js/client/shim.min.js"></script>
+    <script src="node_modules/zone.js/dist/zone.js"></script>
+    <script src="node_modules/reflect-metadata/Reflect.js"></script>
+    <script src="node_modules/rxjs/bundles/Rx.umd.js"></script>
+    <script src="node_modules/@angular/core/bundles/core.umd.js"></script>
+    <script src="node_modules/@angular/common/bundles/common.umd.js"></script>
+    <script src="node_modules/@angular/compiler/bundles/compiler.umd.js"></script>
+    <script src="node_modules/@angular/platform-browser/bundles/platform-browser.umd.js"></script>
+    <script src="node_modules/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js"></script>
+
+    <!-- 2. Load our 'modules' -->
+<script src='components/brewery.service.js'></script>
+<script src='components/beerItem.directive.js'></script>
+
+    <script src='app.component.js'></script>
+    <script src='main.js'></script>
+
+
 </body>
 </html>
